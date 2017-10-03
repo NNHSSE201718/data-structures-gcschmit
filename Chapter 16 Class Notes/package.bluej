@@ -1,18 +1,18 @@
 #BlueJ package file
-dependency1.from=StackDemo
-dependency1.to=LinkedListStack
+dependency1.from=LinkedList
+dependency1.to=ListIterator
 dependency1.type=UsesDependency
-dependency2.from=QueueDemo
-dependency2.to=CircularArrayQueue
+dependency2.from=ListDemo
+dependency2.to=LinkedList
 dependency2.type=UsesDependency
-dependency3.from=LinkedList
+dependency3.from=ListDemo
 dependency3.to=ListIterator
 dependency3.type=UsesDependency
-dependency4.from=ListDemo
-dependency4.to=LinkedList
+dependency4.from=QueueDemo
+dependency4.to=CircularArrayQueue
 dependency4.type=UsesDependency
-dependency5.from=ListDemo
-dependency5.to=ListIterator
+dependency5.from=StackDemo
+dependency5.to=LinkedListStack
 dependency5.type=UsesDependency
 editor.fx.0.height=800
 editor.fx.0.width=1280
