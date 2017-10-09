@@ -5,10 +5,13 @@ public class QueueDemo
       CircularArrayQueue q = new CircularArrayQueue();
 
       //add to q
+      q.add( "Tom" );
+      q.add( "Diana" );
+      q.add( "Harry" );
 
       while (!q.empty())
       {
-         //remove from q
+         System.out.println( q.remove());
       }
    }
 }

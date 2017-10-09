@@ -68,8 +68,23 @@ public class CircularArrayQueue
 
 
     /**
-    Grows the element array if the current size equals the capacity.
+     * Grows the element array if the current size equals the capacity.
      */
+    private void growIfNecessary()
+    {
+        if( this.currentSize == this.elements.length )
+        {
+            Object[] newElements = new Object[2 * this.elements.length];
+            for( int i = 0; i < this.elements.length; i++ )
+            {
+                newElements[i] = elements[(head + i) % this.elements.length];
+            }
+            
+            this.elements = newElements;
+            this.head = 0;
+            this.tail = this.currentSize;
+        }
+    }
 
 
 }//CircularArrayQueue
