@@ -49,15 +49,40 @@ public class CircularArrayQueue
     
 
     /**
-    Removes an element from the head of this queue.
-    @return the removed element
+     * Removes an element from the head of this queue.
+     * @return the removed element
      */
-
+    public Object remove()
+    {
+        if( this.empty() )
+        {
+            throw new NoSuchElementException();
+        }
+        
+        Object remove = this.elements[this.head];
+        this.head = (this.head + 1) % this.elements.length;
+        this.currentSize--;
+        return remove;
+    }
 
 
     /**
-    Grows the element array if the current size equals the capacity.
+     * Grows the element array if the current size equals the capacity.
      */
+    private void growIfNecessary()
+    {
+        if( this.currentSize == this.elements.length )
+        {
+            Object[] newElements = new Object[2 * this.elements.length];
+            for( int i = 0; i < this.elements.length; i++ )
+            {
+                newElements[i] = this.elements[(head + i) % this.elements.length];
+            }
+            this.elements = newElements;
+            this.head = 0;
+            this.tail = currentSize;
+        }
+    }
 
 
 
