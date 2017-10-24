@@ -2,59 +2,69 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
-   A tree in which each node has an arbitrary number of children.
-*/
+A tree in which each node has an arbitrary number of children.
+ */
 public class Tree
 {
-   
+    private Node root;
 
-   class Node
-   {
-      
+    class Node
+    {
+        public Object data;
+        public List<Node> children;
 
-      /**
-         Computes the size of the subtree whose root is this node.
-         @return the number of nodes in the subtree
-      */
-      public int size()
-      {
-         
-      }
-   }
+        /**
+        Computes the size of the subtree whose root is this node.
+        @return the number of nodes in the subtree
+         */
+        public int size()
+        {
 
-   /**
-      Constructs an empty tree.
-   */
-   public Tree()
-   {
-      
-   }
+        }
+    }
 
-   /**
-      Constructs a tree with one node and no children.
-      @param rootData the data for the root
-   */
-   public Tree(Object rootData)
-   {
-      
-   }
+    /**
+    Constructs an empty tree.
+     */
+    public Tree()
+    {
+        this.root = null;
+    }
 
-   /**
-      Adds a subtree as the last child of the root.
-   */
-   public void addSubtree(Tree subtree)
-   {
-      
-   }
+    /**
+    Constructs a tree with one node and no children.
+    @param rootData the data for the root
+     */
+    public Tree(Object rootData)
+    {
+        this.root = new Node();
+        this.root.data = rootData;
+        this.root.children = new ArrayList<>();
+    }
 
-   /**
-      Computes the size of this tree.
-      @return the number of nodes in the tree
-   */
-   public int size() 
-   {
-      
-   }
+    /**
+    Adds a subtree as the last child of the root.
+     */
+    public void addSubtree(Tree subtree)
+    {
+        this.root.children.add( subtree.root );
+    }
 
-   // Additional methods will be added in later sections.
+    /**
+    Computes the size of this tree.
+    @return the number of nodes in the tree
+     */
+    public int size() 
+    {
+        if( this.root == null )
+        {
+            return 0;
+        }
+        else
+        {
+            return this.root.size();
+        }
+    }
+
+    // Additional methods will be added in later sections.
 }
