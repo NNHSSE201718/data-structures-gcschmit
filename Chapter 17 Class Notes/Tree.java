@@ -19,7 +19,13 @@ public class Tree
          */
         public int size()
         {
-
+            int sum = 1;
+            for( Node child : this.children )
+            {
+                sum += child.size();
+            }
+            
+            return sum;
         }
     }
 
