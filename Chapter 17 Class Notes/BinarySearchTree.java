@@ -138,9 +138,28 @@ public class BinarySearchTree
         
         // find the smallest element in the right subtree
         
+        Node smallestParent = toBeRemoved;
+        Node smallest = toBeRemoved.right;
+        while( smallest.left != null )
+        {
+            smallestParent = smallest;
+            smallest = smallest.left;
+        }
         
-            
-            
+        // smallest contains the smallest child in the right subtree
+        
+        // move contents
+        toBeRemoved.data = smallest.data;
+        
+        // unlink the child
+        if( smallestParent == toBeRemoved )
+        {
+            smallestParent.right = smallest.right;
+        }
+        else
+        {
+            smallestParent.left = smallest.right;
+        }            
     }
 
     /**
