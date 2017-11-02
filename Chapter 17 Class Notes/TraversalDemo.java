@@ -29,17 +29,6 @@ public class TraversalDemo
       ShortNameCounter v = new ShortNameCounter();
 
       t1.preorder(v);
-      System.out.println("Short names: " + v.counter);
-
-      // Count short names with iterator
-      Iterator iter = t1.iterator();
-      int counter = 0;
-      while (iter.hasNext())
-      {
-         Object data = iter.next();
-         System.out.println(data);
-         if (data.toString().length() <= 5) { counter++; }
-      }
-      System.out.println("Short names: " + counter);         
+      System.out.println("Short names: " + v.counter);       
    }
 }
